@@ -14,7 +14,7 @@ if [ $war_count -gt 1 ]; then
   exit 1
 fi
 
-find hms/applications/hospitalms/build/libs -type f -name *.war -exec cp "{}" package-output/hms.war \;
+find hms/applications/hospitalms/build/libs -type f -name *.war -exec cp "{}" package-output/hospitalms-0.0.1-SNAPSHOT.war \;
 
 echo "Done packaging"
 exit 0
