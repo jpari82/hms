@@ -1,0 +1,4 @@
+rootProject.name = 'hms'
+
+include "applications:hospitalms"
+include "components:user"
