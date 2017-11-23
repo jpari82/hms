@@ -25,4 +25,4 @@ jobs:
   - put: deploy-hms
     params:
       manifest: hms/manifest.yml
-      path: package-output/hms.jar
+      path: package-output/hospitalms-0.0.1-SNAPSHOT.war
