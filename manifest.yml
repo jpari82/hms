@@ -1,0 +1,10 @@
+applications:
+- name: hms
+  instances: 1
+  memory: 1024M
+  disk_quota: 1024M
+  random-route: true
+  stack: cflinuxfs2
+  path: applications/hospitalms/build/libs/hospitalms-0.0.1-SNAPSHOT.war
+  services:
+    - hms-mysql
