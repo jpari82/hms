@@ -7,14 +7,14 @@ pushd hms
   ./gradlew clean build -x test
 popd
 
-war_count=`find hms/applications/hospitalams/build/libs -type f -name *.war | wc -l`
+war_count=`find hms/applications/hospitalms/build/libs -type f -name *.war | wc -l`
 
 if [ $war_count -gt 1 ]; then
   echo "More than one war found, don't know which one to deploy. Exiting"
   exit 1
 fi
 
-find hms/applications/hospitalams/build/libs -type f -name *.war -exec cp "{}" package-output/hms.war \;
+find hms/applications/hospitalms/build/libs -type f -name *.war -exec cp "{}" package-output/hms.war \;
 
 echo "Done packaging"
 exit 0
