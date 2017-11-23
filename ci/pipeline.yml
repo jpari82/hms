@@ -20,6 +20,7 @@ jobs:
   public: true
   plan:
   - get: hms
+    trigger: true
   - task: package
     file: hms/ci/tasks/package.yml
   - put: deploy-hms
