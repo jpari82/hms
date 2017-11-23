@@ -3,7 +3,7 @@ resources:
   type: git
   source:
     uri: https://github.com/jpari82/hms  #<---- REPLACE ME
-    branch: master
+    branch: multiplejar
 
 - name: deploy-hms
   type: cf
