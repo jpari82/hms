@@ -1,0 +1,28 @@
+resources:
+- name: hms
+  type: git
+  source:
+    uri: https://github.com/jpari82/hms  #<---- REPLACE ME
+    branch: master
+
+- name: deploy-hms
+  type: cf
+  source:
+    api: api.system.cumuluslabs.io       #<---- REPLACE ME
+    username: {{cf-user}}
+    password: {{cf-password}}
+    organization: jpari-pal    #<---- REPLACE ME
+    space: dev         #<---- REPLACE ME
+    skip_cert_check: true
+
+jobs:
+- name: build
+  public: true
+  plan:
+  - get: hms
+  - task: package
+    file: hms/ci/tasks/package.yml
+  - put: deploy-hms
+    params:
+      manifest: hms/manifest.yml
+      path: package-output/hms.jar
