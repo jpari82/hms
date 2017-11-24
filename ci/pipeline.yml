@@ -16,11 +16,11 @@ resources:
     skip_cert_check: true
 
 jobs:
-- name: test
+- name: smoke_test
   public: true
+  trigger: true
+  passed: [build]
   plan:
-  - get: hms
-    trigger: true
   - task: test
     file: hms/ci/tasks/test.yml
 
@@ -29,7 +29,6 @@ jobs:
   plan:
   - get: hms
     trigger: true
-    passed: [test]
   - task: package
     file: hms/ci/tasks/package.yml
   - put: deploy-hms
