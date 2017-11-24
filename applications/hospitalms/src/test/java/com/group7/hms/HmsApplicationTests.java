@@ -11,6 +11,7 @@ public class HmsApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		System.out.println("Test started ----->>>>>>>>");
 	}
 
 }
