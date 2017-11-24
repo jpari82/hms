@@ -28,12 +28,3 @@ jobs:
     params:
       manifest: hms/manifest.yml
       path: package-output/hospitalms-0.0.1-SNAPSHOT.war
-
-- name: smoke_test
-  public: true
-  plan:
-  - get: hms
-    trigger: true
-    passed: [build]
-  - task: test
-    file: hms/ci/tasks/test.yml
