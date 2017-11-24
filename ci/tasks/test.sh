@@ -4,7 +4,7 @@ set -ex
 
 pushd hms
   echo "Fetching Dependencies"
-  ./gradlew clean compile > /dev/null
+  ./gradlew clean compileJava > /dev/null
 
   echo "Running Tests"
   ./gradlew test
