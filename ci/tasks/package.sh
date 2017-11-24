@@ -4,7 +4,7 @@ set -e +x
 
 pushd hms
   echo "Packaging war"
-  ./gradlew clean build
+  ./gradlew clean build -x test
 popd
 
 war_count=`find hms/applications/hospitalms/build/libs -type f -name *.war | wc -l`
