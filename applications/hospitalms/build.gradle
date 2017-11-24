@@ -16,6 +16,7 @@ dependencies {
     compile "mysql:mysql-connector-java:5.1.44"
     compile "javax.mail:mail:1.4.7"
     compile "javax.servlet:jstl:1.2"
+    testCompile "com.h2database:h2:1.4.193"
     testCompile("org.springframework.boot:spring-boot-starter-test:1.5.8.RELEASE") {
         exclude(module: 'commons-logging')
     }
